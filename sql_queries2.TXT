@@ -1,0 +1,153 @@
+31. write the query to display unique result for job type and salary:
+
+mysql> select distinct jobType,email from emp;
++-------------------------+-----------------------+
+| jobType                   | email                       |
++-------------------------+------------------------+
+| SE                            | ash@gmail             |
+| SE                            | ayu@gmail            |
+| developer                 | bhoom@gmail       |
+| developer                 | chutti@gmail.com |
+| softwareAssociate    | poo@gmail.com    |
+| developer                  | vidya@gmail.com |
+| manager                    | vid@gmail.com     |
+| SE                             | bindu@gmail.com |
++-------------------------- +---------------------+
+
+
+32. write the query for arithmetic operator(all except modulus):
+
+mysql> select salary+5000 from emp;
+
+mysql> select salary-5000 from emp;
+
+mysql> select salary*12 from emp;
+
+mysql> select salary/2 from emp;
+
+
+
+33. write the query to display the result whose salary is not equal to 5000.
+
+mysql> select * from emp
+    -> where salary!=5000;
+
+
+mysql> select * from emp
+    -> where salary<>5000;
+
+
+
+
+34.write a query to display whose salary is greater than 25000
+
+
+mysql> select * from emp
+    -> where salary >25000;
+
+
+35.write a query to display whose salary is greater than 25000
+
+mysql> select * from emp
+    -> where salary <25000;
+
+
+36.write a query to display whose salary is greater than equal to 25000
+
+mysql> select * from emp
+    -> where salary>=25000;
+
+
+37.write a query to display whose salary is less than equal to 25000
+
+mysql> select * from emp
+    -> where salary<=30000;
+
+
+38. write the query to display all the records frm employee table whose name is not equal to bhoomi.
+
+mysql> select * from emp
+    -> where name<>'bhoomi';
+
+
+39.write a query to display the records of all employee whose jobtype is developer as well as dept no should be 10.
+
+mysql> select * from emp
+        -> where jobType='developer' And deptno=10;
+
+
+40.write a query to display the records of all employee whose is working in  deptno 30 and salary is <=30000.
+
+mysql> select * from emp
+        -> where deptno=30 and salary<=30000;
+
+
+41. write a query to display the records of all employee whose is working in  deptno 10,20,30 and joptype is developer.
+
+mysql> select * from emp
+    -> where deptno=(10 and 20 and 30) and jobType='developer';
+Empty set (0.00 sec)
+
+
+42.write a query to display the records of all employee whose is working as developer or working  in  deptno 40.
+
+mysql> select * from emp
+        -> where deptno=40 or jobtype='developer';
++--------+----+-----------+-----------------------+-----------+-------------+----------+
+| name   | id | jobType   | email                       | salary     | dob            | deptno |
++--------+----+-----------+-------------------------+--------+---------------+--------+
+| bhoomi |  3 | developer | bhoom@gmail       |  30000  | 1997-07-09 |     10 |
+| chutti    |  4 | developer | chutti@gmail.com  |  25000 | 1997-08-07 |     10 |
+| vidya     |  6 | developer | vidya@gmail.com  |  25000 | 1998-06-07 |     30  |
+| vidya     |  7 | manager   | vid@gmail.com      |  25000 | 1996-11-21 |     40  |
++--------+----+-----------+-------------------------+--------+----------------+--------+
+
+
+43.write a query to display name,id,salary whose jobtpye is accountant or developer.
+
+
+mysql> select name,id,salary from emp
+         -> where jobtype='developer'or 'accountant';
++---------+----+--------+
+| name    | id  | salary   |
++---------+----+--------+
+| bhoomi |  3  |  30000 |
+| chutti    |  4  |  25000 |
+| vidya     |  6  |  25000 |
++---------+----+--------+
+
+
+44. write a query to display employee whose is working in deptno 20 or 30;
+
+mysql> select * from emp
+        -> where deptno=20 or deptno=30;
+
+
+45. write a query to display the name of all the emp whose is working as a manager or SE and both the salary should be >= 30000
+
+mysql> select name from emp
+    -> where (jobtype='manager'or jobtype='se')and salary>=30000;
++------+
+| name |
++------+
+| ash  |
++------+
+
+
+46. write the query to display all the records of employee excluding SE.
+
+mysql> select * from emp
+        -> where jobtype<>'se';
+
+
+47.write a query to display name salary annualsalary excluding  accontants working in dept 30.
+
+mysql> select name,salary,salary*12 as annualsal
+    -> from emp
+    -> where not jobtype= 'accountant' and deptno=30;
++-------+--------+------------+
+| name  | salary | annualsal |
++-------+--------+------------+
+| vidya |  25000 |    300000 |
++-------+--------+------------+
+
