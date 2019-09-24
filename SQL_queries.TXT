@@ -1,0 +1,63 @@
+1.To create the database:
+
+ create database capgemini;
+Query OK, 1 row affected (0.14 sec)
+
+
+
+2.To show the databases created:
+
+show databases;
++---------------------------+
+| Database                       |
++---------------------------+
+| information_schema  |
+| capgemini                     |
+| mysql                             |
+| performance_schema |
+| sys                                  |
++---------------------------+
+5 rows in set (0.22 sec)
+
+
+
+
+
+3. To use database where we need to create table: 
+
+mysql> use capgemini;
+Database changed
+
+
+
+
+4. To create table:
+ 
+mysql> create table student(id int,name varchar(120),emailId varchar(225));
+Query OK, 0 rows affected (0.90 sec)
+
+
+
+
+5. To display table created:
+
+
+mysql> desc student;
++---------+---------------+---------+-----+---------+---------+
+| Field   | Type                 | Null  | Key   | Default | Extra |
++---------+-----------------+-------+-----+---------+-------------+
+| id         | int(11)               | YES  |         | NULL   |             |
+| name    | varchar(120)  | YES   |          | NULL   |            |
+| emailId | varchar(225) | YES   |           | NULL   |           |
++---------+--------------+------+-----+---------+--------------+
+3 rows in set (0.01 sec)
+
+
+
+
+
+6.To alter existing table:
+
+mysql> alter table student add column mobNo int;
+Query OK, 0 rows affected (0.78 sec)
+Records: 0  Duplicates: 0  Warnings: 0
